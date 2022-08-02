@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ew8-HO-icF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindMyPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d3m-j5-PKo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uuB-4L-V0R"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d3m-j5-PKo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JDj-c9-cIU"/>
+                            <constraint firstItem="d3m-j5-PKo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mbg-fy-o5c"/>
+                            <constraint firstItem="d3m-j5-PKo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aI5-Qq-k3L"/>
+                            <constraint firstAttribute="bottom" secondItem="d3m-j5-PKo" secondAttribute="bottom" id="yav-eu-Shg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MapView" destination="d3m-j5-PKo" id="6os-xW-2Nu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xdJ-sd-WWk">
+            <objects>
+                <viewController id="ew8-HO-icF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4aK-XN-UDd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-mz-0dr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-xP-uo7">
+                                <rect key="frame" x="122.5" y="405.5" width="169" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="2Mf-M5-oKm"/>
+                                    <constraint firstAttribute="width" constant="169" id="YSC-sC-ZFB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Map"/>
+                                <connections>
+                                    <action selector="MapOpenButton:" destination="Tlf-ne-9Da" eventType="touchUpInside" id="tfj-9j-OS5"/>
+                                    <action selector="OpenMapButton:" destination="Tlf-ne-9Da" eventType="touchUpInside" id="xg9-Md-EG9"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="SBi-Mg-54G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9PJ-gs-osc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pfK-mz-0dr" firstAttribute="trailing" secondItem="9PJ-gs-osc" secondAttribute="trailing" id="AOw-RS-JaE"/>
+                            <constraint firstItem="IBs-xP-uo7" firstAttribute="centerY" secondItem="9PJ-gs-osc" secondAttribute="centerY" id="IwC-Uf-2cT"/>
+                            <constraint firstItem="pfK-mz-0dr" firstAttribute="leading" secondItem="9PJ-gs-osc" secondAttribute="leading" id="J72-sc-jTv"/>
+                            <constraint firstItem="pfK-mz-0dr" firstAttribute="top" secondItem="4aK-XN-UDd" secondAttribute="top" id="dBk-Tr-xKi"/>
+                            <constraint firstAttribute="bottom" secondItem="pfK-mz-0dr" secondAttribute="bottom" id="dJd-CX-ZjP"/>
+                            <constraint firstItem="IBs-xP-uo7" firstAttribute="centerX" secondItem="9PJ-gs-osc" secondAttribute="centerX" id="qnl-Ws-LMQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDV-ad-GbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Tlf-ne-9Da" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-769.56521739130437" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gradient.png" width="600" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
